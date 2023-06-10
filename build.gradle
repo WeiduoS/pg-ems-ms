@@ -11,6 +11,11 @@ task copy_web_static() {
     }
 }
 
+task run_project {
+    dependsOn 'copy_web_static';
+    finalizedBy ':pg-ems:bootRun';
+}
+
 task build_project {
     dependsOn 'copy_web_static';
     finalizedBy ':pg-ems:bootJar';

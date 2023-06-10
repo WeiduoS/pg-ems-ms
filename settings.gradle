@@ -1,1 +1,3 @@
 rootProject.name = 'pg-ems-ms'
+include 'pg-ems'
+include 'pg-ems-web'

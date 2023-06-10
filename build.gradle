@@ -1,32 +1,17 @@
-plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.1.0'
-	id 'io.spring.dependency-management' version '1.1.0'
+task build_web() {
+    dependsOn ':pg-ems-web:npm_run_build';
 }
 
-group = 'com.pg.ems'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+task copy_web_static() {
+    dependsOn 'build_web';
+    delete ':pg-ems/src/main/resources/static';
+    copy {
+        from 'pg-ems-web/build';
+        into 'pg-ems/src/main/resources/static';
+    }
 }
 
-repositories {
-	mavenCentral()
-}
-
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'mysql:mysql-connector-java:8.0.32'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
+task build_project {
+    dependsOn 'copy_web_static';
+    finalizedBy ':pg-ems:bootJar';
 }

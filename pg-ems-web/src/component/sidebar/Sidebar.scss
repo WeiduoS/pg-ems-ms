@@ -1,0 +1,39 @@
+.sidebar-container {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 180px;
+  background: azure;
+  min-height: 100vh;
+  height: 100%;
+
+  .brand {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 180px;
+    margin: 5px 0;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background: aquamarine;
+    }
+
+    .sidebar-nav-icon {
+      width: 18px;
+      height: 18px;
+      margin: 0 5px;
+    }
+    .sidebar-nav-button {
+      font-size: 18px;
+      margin: 0 5px;
+    }
+  }
+}

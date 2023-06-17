@@ -1,15 +1,38 @@
+@import "../../styles/themes/themify";
+
 .sidebar-container {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 180px;
+  position: relative;
+  display: inline-block;
   background: azure;
   min-height: 100vh;
   height: 100%;
 
-  .brand {
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
+  .sidebar-toggle-button{
+    position: absolute;
+    top: 100px;
+    right: -10px;
+  }
+
+  .sidebar-brand {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    //width: 180px;
+    margin: 5px 0;
+    padding: 5px;
+    cursor: pointer;
+
+    .sidebar-nav-icon {
+      width: 18px;
+      height: 18px;
+      margin: 0 5px;
+    }
+    .sidebar-brand-text {
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+    }
   }
 
   .sidebar-nav {
@@ -17,7 +40,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    width: 180px;
+    //width: 180px;
     margin: 5px 0;
     padding: 5px;
     cursor: pointer;
@@ -34,6 +57,23 @@
     .sidebar-nav-button {
       font-size: 18px;
       margin: 0 5px;
+      @include themify {
+        color: themed('TextBase');
+      }
     }
   }
+}
+
+
+.hidden {
+  display: none;
+}
+
+.add-color {
+  @include themify {
+    color: themed('TextBase');
+  }
+  //color: rebeccapurple;
+  background: blue;
+  border-radius: 50px;
 }

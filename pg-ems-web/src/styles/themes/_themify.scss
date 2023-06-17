@@ -1,0 +1,15 @@
+@import "themes";
+
+
+@mixin themify {
+  @each $theme-name, $theme in $themes {
+    $theme: $theme !global;
+    [data-theme=#{$theme-name}] & {
+      @content
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme, $key);
+}

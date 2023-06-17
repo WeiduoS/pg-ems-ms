@@ -1,0 +1,7 @@
+@import "../color/day";
+@import "../color/night";
+
+$themes: (
+  day: $day-colors,
+  night: $night-colors
+)

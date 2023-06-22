@@ -275,6 +275,13 @@ module.exports = {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Method": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
             "Access-Control-Allow-Headers": "Authorization",
+        },
+        client: {
+            overlay: {
+                errors: false,
+                warnings: false,
+                runtimeErrors: false,
+            }
         }
     },
 };

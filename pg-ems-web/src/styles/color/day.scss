@@ -1,14 +1,7 @@
 $day-colors: (
-  "TextBase": #4a9730
-);
+  'TextBase': #4a9730,
+  'text-primary': #212529,
+  'status-active': #2A88F3,
+  'fill-primary': #F8F9FA,
 
-$TextBase: TextBase;
-
-$webadk-themes: () !default;
-
-$webadk-themes: map-merge(
-    (
-      "day": $day-colors
-    ),
-    $webadk-themes
 );

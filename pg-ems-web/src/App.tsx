@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import DashboardPage from './page/DashboardPage';
 import LoginPage from './page/LoginPage';

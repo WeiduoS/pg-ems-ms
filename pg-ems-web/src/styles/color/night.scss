@@ -1,12 +1,6 @@
 $night-colors: (
-  'TextBase': #843097
-);
-$TextBase: TextBase;
-$webadk-themes: () !default;
-
-$webadk-themes: map-merge(
-                (
-                        "night": $night-colors
-                ),
-                $webadk-themes
+  'TextBase': #843097,
+  'Text-primary': #F8F9FA,
+  'status-active': #2A88F3,
+  'fill-primary': #212529,
 );

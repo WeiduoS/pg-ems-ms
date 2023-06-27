@@ -10,28 +10,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 /**
  * @author Weiduo
- * @date 6/3/23 - 2:13 AM
+ * @date 6/26/23 - 2:39 PM
  */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-public class EmployeeProfile {
+public class VerificationReport {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO,  generator = "native")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    Long verificationReportId;
     Long employeeId;
-    String firstName;
-    String lastName;
-    Integer age;
-    String email;
-    String phoneNumber;
-    String address;
-    String city;
-    String state;
-    String zipcode;
+    String reporterName;
+    Timestamp reportDate;
+    String comment;
+    
 }

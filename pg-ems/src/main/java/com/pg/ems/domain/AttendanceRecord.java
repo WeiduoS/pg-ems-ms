@@ -10,28 +10,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.sql.Date;
+
 /**
  * @author Weiduo
- * @date 6/3/23 - 2:13 AM
+ * @date 6/26/23 - 5:00 PM
  */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-public class EmployeeProfile {
+public class AttendanceRecord {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,  generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
+    Long attendanceRecordId;
     Long employeeId;
-    String firstName;
-    String lastName;
-    Integer age;
-    String email;
-    String phoneNumber;
-    String address;
-    String city;
-    String state;
-    String zipcode;
+    Date date;
+    Integer time;
+
 }

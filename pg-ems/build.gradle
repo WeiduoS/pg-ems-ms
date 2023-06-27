@@ -8,6 +8,11 @@ group = 'com.pg.ems'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+ext {
+	springdocOpenAPIVersion = '1.7.0'
+	springdocOpenAPIStarterWebMVCVersion = '2.1.0'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -19,8 +24,15 @@ repositories {
 }
 
 dependencies {
+
+	/* Spring Data JPA*/
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	/* SpringBoot Web */
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springdocOpenAPIStarterWebMVCVersion}"
+
+	/* MySQL Database Drive*/
 	implementation 'mysql:mysql-connector-java:8.0.32'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

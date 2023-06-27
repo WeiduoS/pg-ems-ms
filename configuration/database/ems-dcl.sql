@@ -1,0 +1,10 @@
+SELECT user FROM mysql.user;
+CREATE USER 'ems_user'@'localhost' IDENTIFIED BY '12345';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.absent_request TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.attendance_record TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.project TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.verification_report TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.employee_profile TO 'ems_user'@'localhost';
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'ems_user'@'localhost';
+REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';

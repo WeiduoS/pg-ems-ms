@@ -4,6 +4,7 @@ import { AiFillProject, AiOutlineArrowLeft, AiOutlineDashboard, AiOutlineForm } 
 import { GoPerson } from 'react-icons/go';
 import { BsTable, BsTypeH1 } from 'react-icons/bs';
 import { RiFeedbackFill } from 'react-icons/ri';
+import BrandIMG from '../../images/band.png';
 
 function Sidebar() {
 
@@ -14,6 +15,8 @@ function Sidebar() {
         if(sidebarToggleStatus) {
             document.getElementsByClassName('sidebar-container')[0]
                 .classList.remove('sidebar-collapse');
+            document.getElementsByClassName('sidebar-brand')[0]
+                .classList.remove('sidebar-collapse');
             document.getElementsByClassName('sidebar-brand-text')[0]
                 .classList.remove('hidden-display');
             Array.from(document.querySelectorAll('div.sidebar-nav'))
@@ -23,7 +26,8 @@ function Sidebar() {
         }else {
             document.getElementsByClassName('sidebar-container')[0]
                 .classList?.add('sidebar-collapse');
-
+            document.getElementsByClassName('sidebar-brand')[0]
+                .classList.add('sidebar-collapse');
             document.getElementsByClassName('sidebar-brand-text')[0]
                 .classList?.add('hidden-display');
             Array.from(document.querySelectorAll('div.sidebar-nav'))
@@ -39,12 +43,13 @@ function Sidebar() {
         <>
             <aside className={'sidebar-container'}>
                 <AiOutlineArrowLeft
-                    className={'sidebar-toggle-button add-color'}
+                    className={'sidebar-toggle-button'}
                     onClick={() => toggleSidebar()}
                 />
                 <div className={'sidebar-manu'}>
                     <div className={'sidebar-brand'}>
-                        <BsTypeH1 className={'sidebar-nav-icon'} />
+                        {/*<BsTypeH1 className={'sidebar-nav-icon'} />*/}
+                        <img className={'sidebar-nav-icon'} alt={'BrandIMG'} src={BrandIMG}/>
                         <div className={'sidebar-brand-text'}>EMP</div>
                     </div>
                     <div className={'sidebar-nav'}>

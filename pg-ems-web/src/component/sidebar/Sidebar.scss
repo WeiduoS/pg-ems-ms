@@ -1,16 +1,25 @@
 @import "../../styles/themes/themify";
+@import "../../styles/responsive/responsive";
 
 .sidebar-container {
   position: relative;
   display: inline-block;
   min-height: 100vh;
-  height: 100%;
+  height: auto;
   width: 200px;
-  transition: width 0.3s;
+  transition: width, left, right, 0.3s;
+  z-index: 100;
+
+  @include responsive-below(sm) {
+    position: fixed;
+    left: -200px;
+    //display: none;
+  }
 
   @include themify {
     background-color: themed('fill-primary');
   }
+
   .sidebar-toggle-button{
     position: absolute;
     top: 90px;
@@ -23,6 +32,9 @@
       color: themed('text-reverse');
       box-shadow: 1px 1px 4px themed('fill-reverse');
       background: themed('violet-base');
+    }
+    @include responsive-below(sm) {
+      display: none;
     }
   }
 
@@ -38,7 +50,7 @@
       flex-flow: row nowrap;
       justify-content: flex-start;
       align-items: center;
-      width: 200px;
+      //width: 100%;
       margin: 30px 0;
       cursor: pointer;
       height: 30px;
@@ -46,7 +58,6 @@
       @include themify {
         color: themed('text-primary');
       }
-
 
       .sidebar-nav-icon {
         width: 50px;
@@ -110,6 +121,51 @@
       }
     }
   }
+}
+
+.sidebar-switcher-button {
+  display: none;
+  position: fixed;
+  top: 30%;
+  right: 5%;
+  width: 25px;
+  height: 25px;
+  border-radius: 13px;
+  padding: 3px;
+  cursor: pointer;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    @include themify {
+      color: themed('violet-base');
+      background-color: themed('fill-primary');
+    }
+  }
+
+  @include themify {
+    color: rgba(themed('text-primary'), 0.7);
+    background-color: rgba(themed('fill-primary'), 0.7);
+  }
+
+  @include responsive-below(sm) {
+    display: initial;
+  }
+}
+
+#sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+
+  @include themify {
+    background-color: rgba(themed(fill-primary), 0.3);
+  }
+
 }
 
 .sidebar-collapse {

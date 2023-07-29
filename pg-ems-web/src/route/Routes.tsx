@@ -1,12 +1,13 @@
 import { createHashRouter } from 'react-router-dom';
-import DashboardPage from '../page/DashboardPage';
-import AttendancePage from '../page/AttendancePage';
+import DashboardPage from '../page/dashboard/DashboardPage';
+import AttendancePage from '../page/attendance/AttendancePage';
 import LoginPage from '../page/LoginPage';
-import ProfilePage from '../page/ProfilePage';
-import ProjectFeedBackPage from '../page/ProjectFeedBackPage';
-import ProjectPage from '../page/ProjectPage';
-import RequestPage from '../page/RequestPage';
+import ProfilePage from '../page/profile/ProfilePage';
+import ProjectFeedBackPage from '../page/feedback/ProjectFeedBackPage';
+import ProjectPage from '../page/project/ProjectPage';
+import MRequestPage from '../page/request/MRequestPage';
 import React from 'react';
+import HRequestPage from '../page/request/HRequestPage';
 
 const router = createHashRouter([
     {
@@ -34,9 +35,13 @@ const router = createHashRouter([
         element: <ProjectPage/>,
     },
     {
-        path: '/request',
-        element: <RequestPage/>,
+        path: '/mrequest',
+        element: <MRequestPage/>,
     },
-])
+    {
+        path: '/hrequest',
+        element: <HRequestPage/>,
+    },
+]);
 
 export default router;

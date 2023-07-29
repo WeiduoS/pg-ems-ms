@@ -24,9 +24,12 @@
     position: absolute;
     top: 90px;
     right: -8px;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
     border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
 
     @include themify {
       color: themed('text-reverse');
@@ -65,8 +68,9 @@
         margin: 0 5px;
       }
       .sidebar-brand-text {
-        font-size: 25px;
-        font-weight: 600;
+        font-size: 2rem;
+        font-weight: 700;
+        font-style: italic;
         text-align: center;
         overflow: hidden;
       }
@@ -90,7 +94,7 @@
 
       &:hover {
         @include themify {
-          color: themed('status-active');
+          background-color: themed('fill-accent');
         }
       }
 
@@ -108,13 +112,17 @@
         transform: translateY(-50%);
       }
 
+      &:hover .sidebar-nav-icon {
+        animation: swing ease-in-out 0.5s 1 alternate;
+      }
+
       .sidebar-nav-icon {
-        width: 25px;
-        height: 25px;
+        width: 22px;
+        height: 22px;
         margin: 0 5px;
       }
       .sidebar-nav-button {
-        font-size: 18px;
+        font-size: 1rem;
         margin: 0 5px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -170,4 +178,19 @@
 
 .sidebar-collapse {
   width: 60px !important;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
 }

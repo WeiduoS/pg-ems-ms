@@ -1,5 +1,5 @@
-@import '../styles/themes/themify';
-@import '../styles/responsive/responsive';
+@import '../../styles/themes/themify';
+@import '../../styles/responsive/responsive';
 
 .dashboard-main {
   display: flex;
@@ -81,12 +81,11 @@
     align-items: center;
     width: 100%;
 
-
-
     .chart {
-      width: 50%;
+      flex-grow: 1;
       height: auto;
       margin: 5px;
+      max-width: 50%;
 
       &:last-of-type {
         margin-left: 0;

@@ -1,0 +1,30 @@
+@import "../../styles/themes/themify";
+
+.modal-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 0 31px -1px rgba(176,169,176,1);
+
+  @include themify {
+    background-color: themed('fill-primary');
+    color: themed('text-primary');
+  }
+
+  .modal-tools {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    border-top: 1px solid rgba(176,169,176,1) ;
+
+    .modal-close-button {
+      margin: 5px;
+    }
+  }
+
+}

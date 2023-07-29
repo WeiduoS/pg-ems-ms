@@ -5,6 +5,8 @@ GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.attendance_record TO 'ems_user'@'l
 GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.project TO 'ems_user'@'localhost';
 GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.verification_report TO 'ems_user'@'localhost';
 GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.employee_profile TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.user TO 'ems_user'@'localhost';
+GRANT INSERT, UPDATE, DELETE, SELECT ON emsdb.authorities TO 'ems_user'@'localhost';
 FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'ems_user'@'localhost';
 REVOKE type_of_permission ON database_name.table_name FROM 'username'@'host';

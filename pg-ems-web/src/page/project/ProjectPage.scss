@@ -1,0 +1,65 @@
+@import "../../styles/themes/themify";
+
+.project-main {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    .project-tools {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        button {
+            border-radius: 3px;
+            border: none;
+            margin: 5px 5px;
+            padding: 3px;
+            cursor: pointer;
+            @include themify {
+                color: themed('text-reverse');
+                background-color: themed(violet-base);
+            }
+        }
+    }
+
+    .project-information-area {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3px;
+
+
+        .project-information-section {
+            flex-grow: 1;
+            background-color: #ffffff;
+            margin-right: 3px;
+            border-radius: 3px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+            h1 {
+                font-style: initial;
+                font-size: 1.5rem;
+                margin-left: 10px;
+                @include themify {
+                    color: themed(violet-base);
+                }
+            }
+            textarea {
+                width: 100%;
+                min-height: 200px;
+                border: none;
+                resize: none;
+                @include themify {
+                    border-top: 1px solid rgba(themed('text-primary'), 0.1);
+                }
+            }
+        }
+    }
+}

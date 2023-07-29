@@ -11,6 +11,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * @author Weiduo
@@ -29,7 +30,7 @@ public class AttendanceRecord {
     @GenericGenerator(name = "native", strategy = "native")
     Long attendanceRecordId;
     Long employeeId;
-    Date date;
+    LocalDate date;
     Integer time;
 
 }

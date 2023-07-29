@@ -1,7 +1,8 @@
 spring:
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
-   url: jdbc:mysql://localhost:3306/emsdb
+#   driver-class-name: com.mysql.jdbc.Driver
+   url: jdbc:mysql://emsdb.c3i57jhnalu4.us-east-1.rds.amazonaws.com:3306/emsdb
    username: ${EMSDB_USERNAME}
    password: ${EMSDB_PASSWORD}
 

@@ -1,8 +1,10 @@
-import React from "react";
-import './Navbar.scss'
+import React from 'react';
+import './Navbar.scss';
 import { BiMessageDetail, BiSearchAlt } from 'react-icons/bi';
 import { BsBell } from 'react-icons/bs';
 import { RxAvatar } from 'react-icons/rx';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 
 function Navbar() {

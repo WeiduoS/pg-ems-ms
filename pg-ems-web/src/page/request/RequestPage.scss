@@ -1,0 +1,60 @@
+@import "../../styles/themes/themify";
+
+.request-main {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+
+  .request-information-area {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+
+    .request-information-section {
+      background-color: #ffffff;
+      margin-right: 3px;
+      border-radius: 3px;
+      width: 50%;
+
+
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      h1 {
+        font-style: initial;
+        font-size: 1.5rem;
+        margin-left: 10px;
+        @include themify {
+          color: themed(violet-base);
+        }
+      }
+
+
+
+      .request-information-row {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px;
+        //@include themify {
+        //  border-top: 1px solid rgba(themed('text-primary'), 0.1);
+        //}
+
+        label {
+          width: 100px;
+        }
+
+        p {
+
+        }
+      }
+    }
+  }
+}

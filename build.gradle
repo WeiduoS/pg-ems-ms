@@ -16,6 +16,10 @@ task run_project {
     finalizedBy ':pg-ems:bootRun';
 }
 
+task run_project_without_web {
+    finalizedBy ':pg-ems:bootRun';
+}
+
 task build_project {
     dependsOn 'copy_web_static';
     finalizedBy ':pg-ems:bootJar';

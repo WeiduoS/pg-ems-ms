@@ -9,6 +9,7 @@ import org.hibernate.annotations.CollectionId;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * @author Weiduo
@@ -28,6 +29,6 @@ public class AbsentRequest {
     @Column(name = "absent_requestcol")
     String absentRequestComment;
     Long employeeId;
-    Date date;
+    LocalDate date;
     Integer leaveTime;
 }

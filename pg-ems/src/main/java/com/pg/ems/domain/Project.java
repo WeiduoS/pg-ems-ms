@@ -19,7 +19,6 @@ import java.sql.Date;
 @Setter
 @Entity
 public class Project {
-
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -29,6 +28,7 @@ public class Project {
     String projectName;
     String description;
     String type;
+    String status;
     Date startDate;
     Date endDate;
     Integer grade;
